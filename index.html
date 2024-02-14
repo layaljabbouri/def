@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Valentine</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="App"></div>
+  <script>
+    const phrases = [
+      "No",
+      "Are you sure?",
+      "Really sure?",
+      "Don't do this to me",
+      "You are breaking my heart :(",
+    ];
+
+    function WelcomePage(onNext) {
+      const div = document.createElement("div");
+      const h1 = document.createElement("h1");
+      const h2 = document.createElement("h2");
+      const h3 = document.createElement("h3");
+      h1.textContent = "Hala anthony, welcome to this Valentine's Day website created only FOR YOU!";
+      h2.textContent =  "You are going to take a test consisting of some serious questions.";
+      h3.textContent = " The result of the test will decide if you deserve to be MY VALENTINE for this year, or not.";
+      const button = document.createElement("button");
+      button.textContent = "Click when you are ready";
+      button.addEventListener("click", onNext);
+      div.appendChild(h1);
+      div.appendChild(h2);
+      div.appendChild(h3)
+      div.appendChild(button);
+      return div;
+    }
+
+    function FirstQuestionPage(onYes, onNo) {
+      const div = document.createElement("div");
+      const img = document.createElement("img");
+      img.alt = "bear with hearts";
+      img.src = "https://media.tenor.com/qeJtDi4BOkwAAAAi/tkthao219-bubududu.gif";
+      const divText = document.createElement("div");
+      const text = document.createElement("div");
+      text.textContent = "How much do you love me out of 10?";
+      const buttonYes = document.createElement("button");
+      buttonYes.className = "yes-button";
+      buttonYes.textContent = "sextillion";
+      buttonYes.addEventListener("click", onYes);
+      const buttonNo = document.createElement("button");
+      buttonNo.className = "noButton";
+      buttonNo.textContent = "10";
+      buttonNo.disabled = true;
+
+      buttonNo.style.marginLeft = "20px";
+      // Add CSS class to apply animation on hover
+      buttonNo.addEventListener("mouseover", function() {
+        buttonNo.classList.add("move-animation");
+      });
+
+      // Remove CSS class when mouse leaves the button
+      buttonNo.addEventListener("mouseleave", function() {
+        buttonNo.classList.remove("move-animation");
+      });
+
+      buttonNo.addEventListener("click", onNo);
+
+      divText.appendChild(text);
+      divText.appendChild(buttonYes);
+      divText.appendChild(buttonNo);
+      div.appendChild(img);
+      div.appendChild(divText);
+
+      return div;
+    }
+
+
+    function SecondQuestionPage(onYes, onNo) 
+    {
+      const div = document.createElement("div");
+      const img = document.createElement("img");
+      img.alt = "bear with hearts";
+      img.src = "https://media.tenor.com/qeJtDi4BOkwAAAAi/tkthao219-bubududu.gif";
+      const divText = document.createElement("div");
+      const text = document.createElement("div");
+      text.textContent = "On a scale of meh to absolutely amazing, how would you rate my girlfriend skills?";
+      const buttonYes = document.createElement("button");
+      buttonYes.className = "yes-button";
+      buttonYes.textContent = "ABSOLUTELY AMAZING";
+      buttonYes.addEventListener("click", onYes);
+      const buttonNo = document.createElement("button");
+      buttonNo.className = "noButton";
+      buttonNo.textContent = "starje kbos hon";
+      buttonNo.disabled = true;
+      buttonNo.style.marginLeft = "20px";
+      // Add CSS class to apply animation on hover
+      buttonNo.addEventListener("mouseover", function() {
+        buttonNo.classList.add("move-animation");
+      });
+
+      // Remove CSS class when mouse leaves the button
+      buttonNo.addEventListener("mouseleave", function() {
+        buttonNo.classList.remove("move-animation");
+      });
+
+      buttonNo.addEventListener("click", onNo);
+
+      divText.appendChild(text);
+      divText.appendChild(buttonYes);
+      divText.appendChild(buttonNo);
+      div.appendChild(img);
+      div.appendChild(divText);
+
+      return div;
+    }
+
+    function ThirdQuestionPage(onYes, onNo) 
+    {
+      const div = document.createElement("div");
+      const img = document.createElement("img");
+      img.alt = "bear with hearts";
+      img.src = "https://media.tenor.com/qeJtDi4BOkwAAAAi/tkthao219-bubududu.gif";
+      const divText = document.createElement("div");
+      const text = document.createElement("div");
+      text.textContent = "On a scale from 1 to 10, how much are you excited for our date on Saturday?";
+      const buttonYes = document.createElement("button");
+      buttonYes.className = "yes-button";
+      buttonYes.textContent = "1000000000";
+      buttonYes.addEventListener("click", onYes);
+      const buttonNo = document.createElement("button");
+      buttonNo.className = "noButton";
+      buttonNo.textContent = "1000";
+      buttonNo.disabled = true;
+      buttonNo.style.marginLeft = "20px";
+      // Add CSS class to apply animation on hover
+      buttonNo.addEventListener("mouseover", function() {
+        buttonNo.classList.add("move-animation");
+      });
+
+      // Remove CSS class when mouse leaves the button
+      buttonNo.addEventListener("mouseleave", function() {
+        buttonNo.classList.remove("move-animation");
+      });
+
+      buttonNo.addEventListener("click", onNo);
+
+      divText.appendChild(text);
+      divText.appendChild(buttonYes);
+      divText.appendChild(buttonNo);
+      div.appendChild(img);
+      div.appendChild(divText);
+      return div;
+    }
+
+
+    function FinalMessagePage(onNext) {
+      const div = document.createElement("div");
+      const h2 = document.createElement("h2");
+      const a2 = document.createElement("h2"); // This line is unnecessary and causes an error
+      const b2 = document.createElement("h3");
+      h2.textContent = "Ok, since all the questions were answered correctly, and most importantly, willingly, I am thrilled to declare you as MY VALENTINE ! <3";
+      a2.textContent = "See you at the italian resto! Love you!";
+      const button = document.createElement("button");
+      b2.textContent = "BUT... We are not done yet! ";
+      button.textContent = "Click here for a surprise";
+      button.addEventListener("click", onNext);
+      div.appendChild(h2);
+      div.appendChild(a2);
+      div.appendChild(b2);
+      div.appendChild(button);
+      return div;
+}
+
+    function PhotoVideoPage() {
+      const div = document.createElement("div");
+      const h1 = document.createElement("h1");
+      h1.textContent = "DO NOT PAUSE THE VIDEO FOR TEHCNICAL PURPOSES";
+      const video = document.createElement("video");
+      video.src = "./video.mp4";
+      video.controls = true;
+      video.autoplay = true;
+      video.loop = true;
+      video.textContent = "Your browser does not support the video tag.";
+      
+      // Append elements to the main div
+      div.appendChild(h1);
+      div.appendChild(video);
+     
+      
+      return div;
+    }
+    
+    function App() {
+      let step = 1;
+      let page;
+    
+      function handleNext() {
+        step++;
+        render();
+      }
+    
+      function render() {
+        const app = document.querySelector(".App");
+        if (!app) return;
+    
+        switch (step) {
+          case 1:
+            page = WelcomePage(handleNext);
+            break;
+          case 2:
+            page = FirstQuestionPage(handleNext, handleNext);
+            break;
+          case 3:
+            page = SecondQuestionPage(handleNext, handleNext);
+            break;
+          case 4:
+            page = ThirdQuestionPage(handleNext, handleNext);
+            break;
+          case 5:
+            page = FinalMessagePage(handleNext);
+            break;
+          case 6:   
+            page = PhotoVideoPage(handleNext);
+            break;
+          default:
+            page = document.createElement("div");
+            page.textContent = "Page not found.";
+        }
+
+        if (step < 6) {
+          app.innerHTML = "";
+          app.appendChild(page);
+        } else {
+          const videoPage = PhotoVideoPage();
+          videoPage.querySelector("video").style.width = "300px"; // Decrease video size
+          app.innerHTML = "";
+          app.appendChild(videoPage);
+        }
+      }
+    
+      render();
+    }
+    
+  App();
+  </script>
+</body>
+</html>
